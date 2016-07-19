@@ -8,6 +8,11 @@ html {
 html * {
     font-family: 'Raleway', sans-serif;
 }
+ 
+body .row{
+    margin-left:0;
+    margin-right:0;
+}
 
 
 /* LINKS */
