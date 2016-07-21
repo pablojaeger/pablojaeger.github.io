@@ -16,7 +16,10 @@ input:focus,
 input:active{
     outline:none !important;
 }
- 
+
+body{
+    position: relative;
+}
 body .row{
     margin-left: 0;
     margin-right: 0;
@@ -245,7 +248,6 @@ main .btn-default:active:hover{
     height: 100%;
     opacity: 1;
 }
-
 .barra-navegacao.single-page {
     vertical-align: middle;
     background: #7e3e67;
@@ -269,7 +271,8 @@ main .btn-default:active:hover{
     cursor: pointer;
 }
 
-.barra-navegacao.single-page .itens li a {
+.barra-navegacao.single-page .itens li a,
+.barra-navegacao.single-page .nav>li>a {
     float: left;
     font-size: 15px;
     font-weight: bold;
@@ -277,8 +280,12 @@ main .btn-default:active:hover{
     color: #FFF;
     height: 40px;
     padding: 0;
+    position: static;
 }
-
+.barra-navegacao.single-page .nav>li>a:focus, 
+.barra-navegacao.single-page .nav>li>a:hover {
+    background-color: transparent;
+}
 .barra-navegacao.single-page .itens .logo-mini {
      width: 0;
      height: 0;
@@ -312,9 +319,9 @@ main .btn-default:active:hover{
     opacity: 0.5; 
 }
 
-.barra-navegacao.single-page .itens li.link-secoes a:focus::after,
-.barra-navegacao.single-page .itens li.link-secoes a:active::after,
-.barra-navegacao.single-page .itens li.link-secoes.ativo a::after {
+/* .barra-navegacao.single-page .itens li.link-secoes a:focus::after, */
+/* .barra-navegacao.single-page .itens li.link-secoes a:active::after, */
+.barra-navegacao.single-page .itens li.link-secoes.active a::after {
     opacity: 1;
 }
 
@@ -353,7 +360,8 @@ main .secao:nth-child(even) {
     background: #f4bb47;
 }
 main .page-header{
-    margin: 60px 0 0px;
+    margin: 0;
+    padding: 60px 0 0px;
     border-bottom: solid 5px rgba(84,41,69,0.1);
 }
 main .secao:nth-child(even) .page-header{

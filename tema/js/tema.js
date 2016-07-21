@@ -26,22 +26,22 @@ function fixaMenu()
 	} 
 }
 
-function identificaSecao(){
-	$(".link-secoes").each(function() {
+// function identificaSecao(){
+// 	$(".link-secoes a").each(function() {
 
-		$(this).click(function(){
-		    $(".link-secoes").removeClass('ativo');
-			$(this).addClass('ativo');
-		});
+// 		$(this).click(function(){
+// 		    $(".link-secoes").parent().removeClass('active');
+// 			$(this).parent().addClass('active');
+// 		});
 
-		/*
-		$(this).click(funtion(){
-			$(".link-secoes").removeClass('ativo');
-			$(this).addClass('ativo');
-		});
-		*/
-	});
-}
+// 		/*
+// 		$(this).click(funtion(){
+// 			$(".link-secoes").removeClass('ativo');
+// 			$(this).addClass('ativo');
+// 		});
+// 		*/
+// 	});
+// }
 //jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
@@ -80,4 +80,4 @@ $(window).resize(function()
 
 defineAlturaDestaque();  
 fixaMenu();
-identificaSecao();
+//identificaSecao();
