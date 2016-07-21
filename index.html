@@ -23,7 +23,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body data-spy="scroll">
     <header>
 
       <div id="capa" class="container-fluid text-center">
@@ -48,33 +48,37 @@
 
       <nav id="nav_geral" class="barra-navegacao single-page text-center anima">
         <ul class="itens">
-          <li class="logo-mini anima"><a href="#"><img alt="logo" src="tema/imgs/simbolo-ceuaca.png"></a></li -->
+          <li class="logo-mini anima">
+          	<a class="page-scroll" href="#capa">
+          		<img alt="logo" src="tema/imgs/simbolo-ceuaca.png">
+          	</a>
+          </li>
           <li class="link-secoes anima">
-            <a href="#">
+            <a class="page-scroll" href="#sobre">
               <span class="glyphicon glyphicon-asterisk visible-xs-inline" aria-hidden="true"></span>
               <span class="hidden-xs">Sobre</span>
             </a>
           </li>
           <li class="link-secoes anima">
-            <a href="#">
+            <a class="page-scroll" href="#selecao">
               <span class="glyphicon glyphicon-flash visible-xs-inline" aria-hidden="true"></span>
               <span class="hidden-xs">Seleção</span>
             </a>
           </li>
           <li class="link-secoes anima">
-            <a href="#">
+            <a class="page-scroll" href="#contato">
               <span class="glyphicon glyphicon-send visible-xs-inline" aria-hidden="true"></span>
               <span class="hidden-xs">Contato</span>
             </a>
           </li>
           <li class="link-secoes anima">
-            <a href="#">
+           <a href="https://www.facebook.com/CEUACA.VIVA" target="_blank">
               <span class="glyphicon glyphicon-pencil visible-xs-inline" aria-hidden="true"></span>
-              <span class="hidden-xs">Blog</span>
+              <span class="hidden-xs">Novidades</span>
             </a>
           </li>
           <li class="link-secoes anima">
-            <a href="#">
+            <a href="#" data-toggle="modal" data-target="#modalLogin">
               <span class="glyphicon glyphicon-user visible-xs-inline" aria-hidden="true"></span>
               <span class="hidden-xs">Morador</span>
             </a>
@@ -90,45 +94,133 @@
         <!-- SOBRE -->
         <section id="sobre" class="secao">
           <div class="row">
-            <div class="page-header col-md-6 col-md-offset-3 text-center">
-              <h1>Sobre</h1>
-            </div>
-            <div class="col-md-6 col-md-offset-3">
-              <div class="subgrupo">
-                <h3 class="text-center">Apresentação</h3>
-                <p>A Ceuaca, Casa do Estudante Aparício Cora de Almeida, localizada no centro de Porto Alegre, é uma entidade que tem como objetivo prestar auxílio de moradia a estudantes de graduação e pós-graduação carentes de recursos socioeconômicos, que não possuem residência na Região Metropolitana de Porto Alegre. A Ceuaca é uma casa de estudante autônoma, isto é, funciona por autogestão, onde os próprios moradores são responsáveis pela sua administração. A Ceuaca abriga estudantes de todas as partes do Brasil e do mundo.</p>
-              </div>
-              <div>
-                <h3 class="text-center">História</h3>
-                <p>Em 1º de agosto de 1934, os estudantes da Faculdade de Direito de Porto Alegre se organizaram e fundaram a “Casa do Estudante”. A referida instituição não tinha sede própria. Utilizava-se dos mais diversos espaços, os quais, muitas vezes, inadequados. Com a morte de seu filho Aparício, em 1935, Israel Almeida e Maria Antônia Cora resolveram doar o prédio do antigo Edifício Almeida ao Estado para que ali fosse construída a Casa do Estudante do Rio Grande do Sul.</p>
-                <p>No início, a Casa, que fica na Rua Riachuelo quase esquina com a Av. Borges, tinha capacidade para 70 moradores. Na década de 50, construiu-se o terceiro andar, bem como a estrutura do Refeitório Universitário (R.U.), da lavanderia e do salão social. Assim, a instituição teve sua capacidade de atendimento aumentada, passando a atender cerca de 100 moradores. Em 1959, é reconhecida como uma entidade de utilidade pública estadual, ato efetuado pelo então governador do Estado, Leonel Brizola. O nome de Casa de Estudante Universitário Aparício Cora de Almeida (CEUACA) lhe é dado em 1961 e apenas um ano depois a Casa é reconhecida como Utilidade Pública Federal.</p>
-              </div>
+            <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+				<div class="page-header text-center">
+					<h2 class="titulo-secao">Sobre</h2>
+				</div>
+				<div class="subgrupo">
+					<h3 class="subtitulo-secao text-center">Apresentação</h3>
+					<p>A Ceuaca, Casa do Estudante Aparício Cora de Almeida, localizada no centro de Porto Alegre, é uma entidade que tem como objetivo prestar auxílio de moradia a estudantes de graduação e pós-graduação carentes de recursos socioeconômicos, que não possuem residência na Região Metropolitana de Porto Alegre. A Ceuaca é uma casa de estudante autônoma, isto é, funciona por autogestão, onde os próprios moradores são responsáveis pela sua administração. A Ceuaca abriga estudantes de todas as partes do Brasil e do mundo.</p>
+					<br>
+					<p class="text-center "><a class="btn btn-primary btn-lg anima" href="#" role="button">Estatuto da CEUACA</a></p>
+				</div>
+				<div class="subgrupo">
+					<h3 class="subtitulo-secao text-center">História</h3>
+					<p>Em 1º de agosto de 1934, os estudantes da Faculdade de Direito de Porto Alegre se organizaram e fundaram a “Casa do Estudante”. A referida instituição não tinha sede própria. Utilizava-se dos mais diversos espaços, os quais, muitas vezes, inadequados. Com a morte de seu filho Aparício, em 1935, Israel Almeida e Maria Antônia Cora resolveram doar o prédio do antigo Edifício Almeida ao Estado para que ali fosse construída a Casa do Estudante do Rio Grande do Sul.</p>
+					<p>No início, a Casa, que fica na Rua Riachuelo quase esquina com a Av. Borges, tinha capacidade para 70 moradores. Na década de 50, construiu-se o terceiro andar, bem como a estrutura do Refeitório Universitário (R.U.), da lavanderia e do salão social. Assim, a instituição teve sua capacidade de atendimento aumentada, passando a atender cerca de 100 moradores. Em 1959, é reconhecida como uma entidade de utilidade pública estadual, ato efetuado pelo então governador do Estado, Leonel Brizola. O nome de Casa de Estudante Universitário Aparício Cora de Almeida (CEUACA) lhe é dado em 1961 e apenas um ano depois a Casa é reconhecida como Utilidade Pública Federal.</p>
+				</div>
             </div>
           </div>
         </section>
+
 
         <!-- SELECAO -->
         <section id="selecao" class="secao">
           <div class="row">
-            <div class="page-header col-md-6 col-md-offset-3 text-center">
-              <h1>Seleção</h1>
+            <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+            	<div class="page-header text-center">
+              		<h2 class="titulo-secao">Seleção</h2>
+              	</div>
             </div>
-            <div class="col-md-6 col-md-offset-3">
-              <div class="subgrupo edital-selecao text-center">
-                <img class="img-responsive" alt="há vagas" src="tema/imgs/ha-vagas.png">
-                <h3 class="text-center chamada text-shadow"><span>Há vagas</span></h3>
-              </div>
-              <div class="subgrupo edital-selecao">
-                <p>A Ceuaca, Casa do Estudante Aparício Cora de Almeida, localizada no centro de Porto Alegre, é uma entidade que tem como objetivo prestar auxílio de moradia a estudantes de graduação e pós-graduação carentes de recursos socioeconômicos, que não possuem residência na Região Metropolitana de Porto Alegre. A Ceuaca é uma casa de estudante autônoma, isto é, funciona por autogestão, onde os próprios moradores são responsáveis pela sua administração. A Ceuaca abriga estudantes de todas as partes do Brasil e do mundo.</p>
-              </div>
+            <div class="col-md-2 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center">
+            	<div class="subgrupo edital-selecao ">
+        			<img class="img-responsive" alt="há vagas" src="tema/imgs/ha-vagas.png">
+        			<h3 class="chamada text-shadow">Há vagas</h3>
+	            </div>
+	        </div>
+	        <div class="col-md-4 col-sm-6 col-md-offset-0 col-sm-offset-3">
+	        	<div class="subgrupo edital-selecao">
+            		<h3 class="text-center">Edital de seleção 2016.2</h3>
+		        	<p><b>Público alvo:</b> Estudantes de graduação e pós graduação que comprovem carência econômica</p>
+		        	<p><b>Inscrições:</b> 02 a 18 de agosto de 2016</p>
+	        	</div>
+	        	<div class="subgrupo edital-selecao">
+            		<a href="#" class="btn btn-primary btn-lg btn-block anima-100">Inscreva-se</a>
+		        	<a href="#" class="btn btn-default btn-lg btn-block anima-100">Edital</a>
+					<a href="#" class="btn btn-default btn-lg btn-block anima-100">Estatuto da CEUACA</a>
+	        	</div>
+	        </div>
+          </div>
+        </section>
+
+
+
+        <!-- CONTATO -->
+        <section id="contato" class="secao">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+            	<div class="page-header text-center">
+              		<h2 class="titulo-secao">Contato</h2>
+              	</div>
+              	<div class="subgrupo">
+	              	<form id="form_contato">
+	              		<div class="form-group">
+	              			<label for="nome_valor">Nome</label>
+	              			<input type="text" class="form-control texto-cortado" id="nome_valor" placeholder="Qual seu nome?">
+	              		</div>
+	              		<div class="form-group">
+	              			<label for="email_valor">Email</label>
+	              			<input type="email" class="form-control texto-cortado" id="email_valor" placeholder="E seu email?">
+	              		</div>
+	              		<div class="form-group">
+	              			<label for="assunto_valor">Assunto</label>
+	              			<input type="text" class="form-control texto-cortado" id="assunto_valor" placeholder="Sobre o que é sua mensagem?">
+	              		</div>
+	              		<div class="form-group">
+	              			<label for="msg_valor">Mensagem</label>
+	              			<textarea id="msg_valor" class="form-control" rows="4" placeholder=""></textarea>
+	              		</div>
+	              		<div class="form-group">
+	              			<button type="submit" class="btn btn-primary btn-lg btn-block anima-100">
+	              				Enviar   
+	              				<span class="glyphicon glyphicon-send"></span>
+	              			</button>
+	              		</div>
+	              	</form>
+				</div>
+              	<div class="subgrupo text-center ajuste-inline-block">
+	              	<a href="https://www.facebook.com/CEUACA.VIVA" target="_blank" class="links-contato anima cantos-arredondados">
+	              		<img src="tema/imgs/icone-facebook.png" alt="">
+	              	</a>
+	              	<a href="#" class="links-contato anima cantos-arredondados">
+	              		<img src="tema/imgs/icone-email.png" alt="">
+	              	</a>
+				</div>
             </div>
           </div>
         </section>
-      
-
       </div>
+      <div id="modalLogin" class="modal fade" tabindex="-1" role="dialog">
+      	<div class="modal-dialog modal-sm">
+      		<div class="modal-content">
+      			<div class="modal-header">
+      				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      				<h4 class="modal-title">Acesso dos moradores</h4>
+      			</div>
+      			<div class="modal-body">
+      				<form id="form_login">
+      					<div class="form-group">
+      						<input type="text" class="form-control input-lg texto-cortado" id="login_valor" placeholder="Login">
+      					</div>
+      					<div class="form-group">
+      						<input type="password" class="form-control input-lg texto-cortado" id="senha_valor" placeholder="Senha">
+      					</div>
+      					<div class="form-group">
+      						<button type="submit" class="btn btn-primary btn-lg btn-block anima-100" data-dismiss="modal">
+      							Enviar   
+      							<span class="glyphicon glyphicon-send"></span>
+      						</button>
+      					</div>
+      					<button type="button" class="btn btn-default btn-lg btn-block anima-100" data-dismiss="modal">Cancelar</button>
+      				</form>
+      			</div>            
+      		</div><!-- /.modal-content -->
+      	</div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
     </main>
-    <footer></footer>
+    <footer>
+    	<small class="text-center text-shadow">&copy; 2016 Ceuaca</small>
+    </footer>
 
 
     <!-- jQuery  -->
@@ -137,6 +229,8 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- Tema.js -->
     <script src="tema/js/tema.js"></script>
+    <!-- jquery.easing.min.js -->
+    <script src="tema/js/jquery.easing.min.js"></script>
   </body>
 </html>
 

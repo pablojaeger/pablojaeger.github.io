@@ -6,6 +6,10 @@ function defineAlturaDestaque()
 	var alturaJanela = $(window).height();
 	var alturaBarraNav = $("#nav_geral").outerHeight();
 	$("#capa").height(alturaJanela - alturaBarraNav);
+
+	$(".secao").each(function(){
+		$(this).css({"min-height":alturaJanela});
+	});
 }
  //**//**//**//**//**//**//**//**//**//**//**//
 function fixaMenu()
@@ -38,6 +42,17 @@ function identificaSecao(){
 		*/
 	});
 }
+//jQuery for page scrolling feature - requires jQuery Easing plugin
+$(function() {
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+});
+
 
 var lastScrollTop = 0;
 $(window).scroll(function(event)

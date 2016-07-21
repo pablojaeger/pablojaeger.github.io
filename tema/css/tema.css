@@ -8,10 +8,18 @@ html {
 html * {
     font-family: 'Raleway', sans-serif;
 }
+a:focus,
+a:active,
+button:focus,
+button:active,
+input:focus,
+input:active{
+    outline:none !important;
+}
  
 body .row{
-    margin-left:0;
-    margin-right:0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 
@@ -45,6 +53,19 @@ a:hover {
     -o-transition: all 100ms ease-in-out;
     transition: all 100ms ease-in-out;
 }
+.cantos-arredondados{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.ajuste-inline-block{
+    font-size:0;
+}
+.texto-cortado {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 
 /* SOMBRAS */
@@ -55,10 +76,47 @@ a:hover {
     -ms-text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
     text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
 }
-
-.quebra-condicional{ 
+.quebra-condicional{
     display:none;
 }
+
+/* BOTOES */
+main .btn{
+    margin: 0px;
+    padding: 10px 20px;
+    font-weight: 700;
+}
+main .btn-primary {
+    color: #4d3e47;
+    background-color: #f4bb47;
+    border: none;
+}
+main .btn-primary:hover,
+main .btn-primary:active,
+main .btn-primary:focus,
+main .btn-primary:active:hover{
+    background-color: #542945;
+}
+
+main .subgrupo.edital-selecao .btn-primary:hover,
+main .subgrupo.edital-selecao .btn-primary:active,
+main .subgrupo.edital-selecao .btn-primary:focus,
+main .subgrupo.edital-selecao .btn-primary:active:hover{
+    background-color: #a75289;
+}
+main .btn-default {
+    color: #542945;
+    background-color: rgba(167, 82, 137, 0.25);
+    border:none;
+}
+main .btn-default:hover,
+main .btn-default:active,
+main .btn-default:focus,
+main .btn-default:active:hover{
+    background-color: rgba(255, 255, 255, 1);
+}
+
+
 /* CABECALHO */
 
 .logo.destaque {
@@ -78,7 +136,7 @@ a:hover {
     background: url("../imgs/capa.jpg") no-repeat fixed center bottom;
     background-size: cover;
     position: relative;
-    /* margin: 0; */
+    margin: 0;
     padding-bottom: 0;
     padding-top: 0;
     padding-left: 30px;
@@ -269,7 +327,7 @@ a:hover {
     position: fixed;
     width: 100%;
     top:0px;
-    z-index: 10000000;
+    z-index: 1000;
 }
 .barra-navegacao.single-page.menu-fixo .logo-mini{
     width: 50px;
@@ -278,29 +336,37 @@ a:hover {
     opacity: 1;
 }
 main {
-    color:#717171;
+    color: #4d3e47;
 }
+
 main .secao{
-    padding-bottom:50px;
-    /* margin-left: -15px; */
-    /* margin-right: -15px; */
+    padding: 0 15px 40px 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+    height: auto;
+    display: block;
+    position: relative;
+    overflow: hidden;
 }
 
 main .secao:nth-child(even) {
     background: #f4bb47;
-    margin-left: -15px;
-    margin-right: -15px;
 }
 main .page-header{
-    border-bottom: solid 5px rgba(84,41,69,0.15);
+    margin: 60px 0 0px;
+    border-bottom: solid 5px rgba(84,41,69,0.1);
 }
-main h1{
+main .secao:nth-child(even) .page-header{
+    border-bottom: solid 5px rgba(255,255,255,0.2);
+}
+main .titulo-secao{
     font-weight:900;
+    font-size: 45px;
     color: #4d3e47;
 }
-main h3{
+main .subtitulo-secao{
     font-weight: 700;
-    margin: 40px 0 20px 0;
+    margin: 0px 0 20px 0;
     color: #4d3e47;
 }
  main p{
@@ -311,29 +377,116 @@ main h3{
  }
 
 main .edital-selecao{
-    background: #f4bb47;
-    padding:36px;
-    color: #4d4d4d;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+    padding: 0 0;
+}
+
+main .edital-selecao.ha-vagas{
+    /* background: #542945; */
 }
 main .edital-selecao img{
     display:inline-block;
-    margin: -10px 0 0 0;
+    margin: 20px 0px 20px 0;
 }
 main .edital-selecao h3.chamada{
     text-transform: uppercase;
     font-size: 40px;
     font-weight: 900;
-    color:#FFF;
+    color: #FFF;
+    /* padding-top: 15px; */
+    margin: 0 0 -30px 0;
 }
 main .edital-selecao h3.chamada span{
-    background:#542945;
-    padding: 8px 20px 4px 20px;
+    /* background: #542945; */
+    /* padding: 15px 20px 10px 20px; */
+    /* display: block; */
+}
+main .edital-selecao h3{
+    /* color: #fff; */
+    font-size: 26px;
+    font-weight: 900;
+    margin: 10px 0 15px 0;
+    /* line-height: 42px; */
 }
 main .edital-selecao p{
-    color: ##7e3e67;
+    /* color: #542945; */
+    /* font-size: 30px; */
+    /* line-height: 42px; */
+}
+
+main .subgrupo{
+    border-bottom: dashed 2px rgba(84,41,69,0.1);
+    padding: 40px 0 20px 0;
+}
+main .subgrupo.edital-selecao{
+    border-bottom: dashed 2px rgba(255,255,255,0.25);
+    padding-bottom: 10px;
+}
+main .subgrupo.edital-selecao .btn{
+    margin: 10px 0 0 0;
+}
+main .subgrupo.edital-selecao .btn-primary{
+    color:#fff;
+    background-color: #542945;
+}
+main .subgrupo:last-child{
+    border-bottom: none;
+    padding-bottom: 0;
+}
+main .subgrupo.edital-selecao:last-child{
+    border-bottom: none;
+    padding-bottom: 20px;
+    padding-top: 5px;
+}
+main .links-contato{
+    background-color: #542945;
+    overflow: hidden;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    margin: 5px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+main .links-contato img{
+    width:100%;
+    height:auto;
+}
+main .form-control {
+    display: block;
+    width: 100%;
+    min-height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #4d3e47;
+    background-color: #fff;
+    background-image: none;
+    border: solid 2px rgba(84,41,69,0.1);
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.form-control:focus {
+    border-color: #dcbad0;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+footer{
+    background-color: #a75289;
+    padding: 20px 0 40px 0;
+    color:#fff;
+}
+footer small{
+    display:block;
+    font-weight: 700;
+    font-size: 18px;
+    opacity: 0.3;
 }
 @media (max-height: 600px) { 
     #capa .row:first-of-type {
