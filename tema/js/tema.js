@@ -26,6 +26,7 @@ function fixaMenu()
 	} 
 }
 
+
 // function identificaSecao(){
 // 	$(".link-secoes a").each(function() {
 

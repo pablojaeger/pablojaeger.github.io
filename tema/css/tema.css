@@ -252,7 +252,8 @@ main .btn-default:active:hover{
     vertical-align: middle;
     background: #7e3e67;
     border-bottom: solid 5px #dcbad0;
-    position: relative;
+    position: absolute;
+    width: 100%;
     display: block;
 }
 
@@ -344,6 +345,7 @@ main .btn-default:active:hover{
 }
 main {
     color: #4d3e47;
+    padding-top: 65px;
 }
 
 main .secao{
@@ -360,8 +362,8 @@ main .secao:nth-child(even) {
     background: #f4bb47;
 }
 main .page-header{
-    margin: 0;
-    padding: 60px 0 0px;
+    margin: 65px 0 0px;
+    padding: 10px 0 0px;
     border-bottom: solid 5px rgba(84,41,69,0.1);
 }
 main .secao:nth-child(even) .page-header{
