@@ -494,11 +494,17 @@ footer{
     color:#fff;
 }
 footer small{
-    display:block;
+    display: block;
+    float: left;
+    position: absolute;
+    left: 0;
     font-weight: 700;
     font-size: 20px;
     line-height: 35px;
     opacity: 0.3;
+    width: 100%;
+    margin: 0 auto 10px auto;
+    z-index: 0;
 }
 
 .footer-distributed{
@@ -507,16 +513,15 @@ footer small{
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
-    text-align: left;
     font: normal 16px sans-serif;
     padding: 45px 50px;
     margin-top: 80px;
+    overflow: hidden;
 }
 
 .footer-distributed .footer-left{
-    position: absolute;
-    left: 50px;
-    top: 45px;
+    float: left;
+    z-index: 1;
 }
 .footer-distributed .footer-left p{
     color:  #8f9296;
@@ -542,7 +547,7 @@ footer small{
     padding: 0 20px 0 0;
 }
 .footer-distributed p.footer-links a::after{
-    content: "â€¢";
+    content: "\2022";
     float: right;
     margin-right: -20px;
     width: 20px;
@@ -554,9 +559,9 @@ footer small{
 }
 
 .footer-distributed .footer-right{
-    position: absolute;
-    right: 50px;
-    top: 45px;
+    font-size: 0;
+    text-align: center;
+    float: right;
 }
 
 .footer-distributed .footer-right a{
@@ -565,13 +570,11 @@ footer small{
     height: 35px;
     background-color:  #33383b;
     border-radius: 2px;
-
     font-size: 20px;
     color: #ffffff;
     text-align: center;
     line-height: 35px;
-
-    margin-left: 3px;
+    margin: 2px;
 }
 
 /* If you don't want the footer to be responsive, remove these media queries */
@@ -628,5 +631,16 @@ footer small{
 
     .texto-destaque h4 {
         font-size: 20px;
+    }
+    footer small{
+        position: relative !important;
+    }
+    .footer-left, .footer-right{
+        width: 100%;
+        float: none;
+    }
+    .auto-lightbox .thumbnail {
+        width: 115px !important;
+        height: 115px !important;
     }
 }

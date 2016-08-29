@@ -1,4 +1,5 @@
-var scrollPosition = 100;
+var scrollPosition = "";
+var body = document.querySelector("body");
 function autoLightBox(objeto){
 
 	var lightboxes = document.querySelectorAll(objeto);
@@ -8,11 +9,6 @@ function autoLightBox(objeto){
 
 		let containerID = 'lightbox' + (index+1);
 		item.setAttribute("id", containerID);
-
-		/*
-		let elementScroll = item[index];
-		
-		*/
 
 		let template = "";
 
@@ -54,7 +50,6 @@ function autoLightBox(objeto){
 			}
 
 			
-
 			template = '<li class="item"><a href="#' + imgID + '" class="thumbnail" style="background-image: url(' +  imgURL +  ')"><span class="easing">' + imgTitle + '</span></a><div class="large" id="' + imgID + '"><a href="#' + 'lightbox' + (index + 1) + '" class="overlay"></a><div class="img-area easing"><div class="img-box"><img src="' + imgURL + '" alt="' + imgAltOriginal + '"><a href="#' + imgPrev + '" class="arrow left"></a><a href="#' + imgNext + '" class="arrow right"></a></div><h3>' + imgTitle + '</h3><p>' + imgDescription + '</p></div></div></li>'
 
 			newHTML += template;
@@ -64,17 +59,11 @@ function autoLightBox(objeto){
 
 
 		var links = document.querySelectorAll(".thumbnail");
-		
 
 		links.forEach(function(link, count){
 
 			link.addEventListener("click", function(event){
-
 				scrollPosition = window.pageYOffset;
-				//event.preventDefault();
-				//var scrollPosition = window.pageYOffset;
-				//console.log(scrollPosition);
-			    //
 			});
 		});
 	
@@ -83,33 +72,15 @@ function autoLightBox(objeto){
 	
 };
 
-/*
-var rememberScroll = function(){
-	scrollPosition = window.pageYOffset;
-	return scrollPosition;
-}
-*/
-
 autoLightBox(".auto-lightbox");
 
 window.onhashchange = function(){
-	console.log(scrollPosition);
+
+	let urlImagem = location.hash;
+	if (urlImagem.indexOf("_") != -1){
+		body.style.overflow = "hidden";
+	}else{
+		body.style.overflow = "visible";
+	}
 	window.scrollTo(0, scrollPosition);
-}
-/*
-var rememberScroll = function(scrollPosition){
-	document.addEventListener("scroll", function(){
-		scrollPosition = window.pageYOffset;
-	});
-	return scrollPosition;
-}
-*/
-
-
-
-
-
-
-
-
-
+};
