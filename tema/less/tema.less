@@ -1,0 +1,1244 @@
+//	***
+//	Imports
+//		Dependências LESS
+		@import "variaveis-tema";
+		@import "mixins-tema";
+
+
+
+
+//	***
+//	Regras 
+//	a classe "umbler" vai na tag "html" pra evitar conflitos com o bootstrap
+	.umbler{ 
+
+//		***
+//		Definicoes gerais
+		body{
+			//padding-top: 70px;
+			width: 100%;
+			overflow-x: hidden;
+//			...
+//			links
+			a{
+				color:@primary;
+				text-decoration: none;
+				.ease(100ms);
+
+				&:hover,
+				&:focus {
+					color:@primary-dark;
+				}
+			}
+
+//			...
+//			Suavicação da transicao
+			.ease, .ease > * { .ease(); } 
+
+		}
+
+
+
+
+//		***
+//		Tipografia
+
+//			...
+//			Padroes gerais
+			body{ 
+				font-family: @font-default;
+				color: @text-color;
+				font-size: @base;
+				line-height: @base * @ratio;
+			}
+
+//			...
+//			Estilos
+//				> Cursiva
+				.cursive {font-family: @font-cursive; }
+
+//			...
+//			Titulos
+			h1, h2, h3, h4, h5, h6 { 
+				line-height: 	110%;
+				color: 			inherit; 
+			} 
+
+			h1 { font-size: 50px; font-weight: 	900; margin:0 0 45px 0; }
+			h2 { font-size: 35px; font-weight: 	900; margin:0 0 45px 0; }
+			h3 { font-size: 28px; font-weight: 	400; margin:0 0 45px 0; }
+			h4 { font-size: 20px; font-weight: 	700; margin:0 0 25px 0; }
+			h5 { font-size: 16px; font-weight: 	700; margin:0 0 20px 0; }
+			h6 { font-size: 16px; font-weight: 	400; margin:0 0 20px 0; }
+
+//			...
+//			Parágrafos
+			p { 
+				font-size: @base;
+				line-height: @base * @ratio ;
+				font-weight: normal;
+				margin-bottom: @base; 
+			}
+
+			p.lead	{ 
+				font-size: @base * @ratio;
+				line-height: @base * 1.6 
+			};
+
+//			...
+//			Negrito
+			strong, b { font-weight: 900; }
+
+//			...
+//			Cores
+//				> Cor Primaria
+				.text-primary { color: 	@primary; }
+
+//				> Sucesso
+				.text-success { color: 	@success; }
+
+//				> Alerta
+				.text-warning { color: 	@warning; }
+
+//				> Perigo
+				.text-danger { color: 	@danger; }
+
+//				> Secao
+				.section02 .text-section { color: @section02; }
+
+//			...
+//			Texto em destaque
+			.section02 .spotlight {
+				color: @section02;
+				position: relative;
+				padding: 0 4px;
+				/*
+				&::after{
+					bottom: -5px;
+					left: 5px;
+					right: 5px;
+					content: "";
+					width: auto;
+					height: 1px;
+					position: absolute;
+					border-bottom: dotted @section02-light 2px;
+				}
+				*/
+			}
+
+
+
+
+//		***
+//		Botões
+		.btn{
+//			...
+//			Base
+			font-family: @font-default;
+			font-weight: normal;
+		    font-size: @base;
+		    line-height: 40px;
+		    padding: 0 20px;
+		    margin: 10px;
+		    border: none;
+		    outline: none !important;
+		    position: relative;
+		    overflow: hidden;
+		    .truncated-text();
+		    .border-radius(4px);
+		    .ease(); 
+
+//			...
+//			Tamanhos
+//				> Grande			    
+			   	&.btn-lg {
+			    	font-size: 		@base + 4;
+			    	line-height: 	64px;
+			    	font-weight:    700;
+			    	padding: 		0 40px; 
+			    }
+//				> Pequeno
+			    &.btn-sm { }
+//				> Mini
+			    &.btn-xs { }
+
+//			...
+//			Estados
+//				> Hover e foco
+				&:hover, &:focus, &.focus { text-decoration: none; }
+//				> Ativo
+			    &:active, &.active { 
+			    	border-color:	transparent;
+				    .box-shadow(none); 
+				} 
+
+//			...
+//			Cores
+//				> Padrao
+				&.btn, &.btn-default {
+					color: 							@text-color;
+					background-color:				@primary-lighter;
+//					>> Estados
+						&:hover, &:focus, &.focus	{ background-color: @primary-light;  color: #FFF; }
+						&:active, &.active 			{ background-color: darken(@primary-light, 10%); color: #FFF; } 
+				}
+
+//				> Cor Primaria
+				&.btn-primary {
+					color: 							#FFF;
+					background-color:				@primary;
+//					>> Estados
+						&:hover, &:focus, &.focus	{ background-color: @primary-dark; }
+						&:active, &.active 			{ background-color: darken(@primary-dark, 10%); } 
+				}
+
+//				> Sucesso
+				&.btn-success {
+					color: 							#FFF;
+					background-color:				@success;
+//					>> Estados
+						&:hover, &:focus, &.focus	{ background-color: @success-dark; }
+						&:active, &.active 			{ background-color: darken(@success-dark, 10%); } 
+				}
+
+//				> Alerta
+				&.btn-warning {
+					color: 							#FFF;
+					background-color:				@warning;
+//					>> Estados
+						&:hover, &:focus, &.focus	{ background-color: @warning-dark; }
+						&:active, &.active 			{ background-color: darken(@warning-dark, 10%); } 
+				}
+
+//				> Perigo
+				&.btn-danger {
+					color: 							#FFF;
+					background-color:				@danger;
+//					>> Estados
+						&:hover, &:focus, &.focus	{ background-color: @danger-dark; }
+						&:active, &.active 			{ background-color: darken(@danger-dark, 10%); } 
+				}
+			}
+//			> Secao
+			.section02 .btn-section {
+				color: 							#FFF;
+				background-color:				@section02;
+//				>> Estados
+					&:hover, &:focus, &.focus	{ background-color: @section02-dark; }
+					&:active, &.active 			{ background-color: darken(@section02-dark, 10%); } 
+			}
+
+//		***
+//		Ilustracoes
+		.figure {
+
+			position: absolute;
+			background-repeat: no-repeat;
+			display: block;
+			opacity: 1;
+			.ease(400ms, cubic-bezier(0,0,.25,1));
+
+//			chao
+			&.floor {
+				bottom: 0;
+				right: -50%;
+				margin: 0 -70px -70px 0;
+				width: 1402px;
+				height: 186px;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: 0 0;
+				z-index: -1;
+			}
+//			fundo rabiscado
+			&.scribble {
+				.ease(1200ms, cubic-bezier(0,0,.25,1));
+				top: 50%;
+				right: -15px;
+				margin: -299px 0 0 0;
+				width: 1253px;
+				height: 598px;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: -1402px 0;
+				z-index: -1;
+
+				&.right {
+					right: auto;
+					left: 300px;
+				} 
+			}
+
+//			advogado fracassado
+			&.ze_advogado {
+				bottom: 0;
+				right: 300px;
+				margin-bottom: -20px;
+				width: 185px;
+				height: 276px;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: 0 -186px;
+				z-index: 1;
+				.speech {
+					top: -50px;
+					right: -15px;
+					width: 248px;
+					height: 65px;
+					background-image: url("../imgs/sprite-ilustracoes.png");
+					background-position: -2655px 0px;
+					z-index: 2;
+				}
+			}
+
+//			advogado de sucesso
+			&.dr_jose {
+				.delay(100ms);
+				bottom: 0;
+				right: 30px;
+				margin-bottom: -40px;
+				width: 288px;
+				height: 340px;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: -185px -186px;
+				z-index: 1;
+				.speech {
+					top: -60px;
+					right: 45px;
+					width: 231px;
+					height: 82px;
+					background-image: url("../imgs/sprite-ilustracoes.png");
+					background-position: -2655px -65px;
+					z-index: 2;
+				}
+			}
+
+//			cena do advogado na cadeira
+			&.dr_jose_relax {
+				.delay(100ms);
+				bottom: 0;
+				left: 0;
+				margin: 0 0 90px 15%;
+				width: 426px;
+				height: 370px;
+				z-index: 1;
+				.dr_jose {
+					bottom: 0;
+					left: 0;
+					margin: 0 0 0 0;
+					width: 426px;
+					height: 370px;
+					background-image: url("../imgs/sprite-ilustracoes.png");
+					background-position: -951px -186px;
+					z-index: 4;
+				}
+				.send-to-group {
+					.delay(100ms);
+					top: 0;
+					left: 0;
+					margin: 10px 0 0 -120px;
+					width: 276px;
+					height: 192px;
+					background-image: url("../imgs/sprite-ilustracoes.png");
+					background-position: -2903px -0px;
+					z-index: 2;
+					.speech {
+						top: 0;
+						left: 0;
+						margin: -85px 0 0 45px;
+						width: 345px;
+						height: 118px;
+						background-image: url("../imgs/sprite-ilustracoes.png");
+						background-position: -2655px -246px;
+						z-index: 2;
+					}
+				}
+				.user {
+					.delay(200ms);
+					top: 0;
+					right: 0;
+					margin: -3px -145px 0 0;
+					width: 288px;
+					height: 153px;
+					background-image: url("../imgs/sprite-ilustracoes.png");
+					background-position: -3179px 0;
+					z-index: 2;
+					.speech {
+						top: 0;
+						left: 0;
+						margin: -75px 0 0 48px;
+						width: 198px;
+						height: 59px;
+						background-image: url("../imgs/sprite-ilustracoes.png");
+						background-position: -2655px -438px;
+						z-index: 2;
+					}
+				}
+				
+			}
+
+//			Umblerito com escudo
+			&.umblerito_defense {
+				bottom: 0;
+				right: 0;
+				margin: 0 5% 0 0;
+				width: 478px;
+				height: 355px;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: -473px -186px;
+				z-index: 1;
+				.speech {
+					.delay(100ms);
+					top: 0;
+					right: 0;
+					margin: -55px -10px 0 0;
+					width: 196px;
+					height: 99px;
+					background-image: url("../imgs/sprite-ilustracoes.png");
+					background-position: -2655px -147px;
+					z-index: 2;
+				}
+			}
+
+			&.notebook {
+				.delay(100ms);
+				top: 0;
+				right: 80px;
+				margin-bottom: 0;
+				width: 750px;
+				height: 386px;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: -3751px 0;
+				z-index: 1;
+			}
+
+			&.cellphone {
+				bottom: 0;
+				right: 0px;
+				margin-bottom: 0;
+				width: 210px;
+				height: 350px;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: -4501px 0;
+				z-index: 1;
+				.menu-wrap {
+					top: 0;
+					left: -1px;
+					margin: 74px 0 0 20px;
+				    width: 147px;
+				    height: 213px;
+					z-index: 1;
+					overflow: hidden;
+					&:hover {
+						.menu { left: -1px;  }
+					}
+				}
+				.menu {
+					top: -1px;
+					left: -128px;
+					margin: 0;
+					width: 128px;
+					height: 214px;
+					background-image: url("../imgs/sprite-ilustracoes.png");
+					background-position: -4506px -350px;
+					.ease(300ms, cubic-bezier(0,0,.25,1));
+				}
+				
+			}
+
+			&.tablet {
+				bottom: 0;
+				left: 0;
+				margin-bottom: 0;
+				width: 754px;
+				height: 407px;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: -3751px -386px;
+				z-index: 1;
+				padding: 35px 62px 17px 60px;
+
+				video{
+					width: 100%;
+					.border-radius(0px 0px 2px 2px);
+				}
+			}
+
+//			"dica" sobre os dispositivos
+			&.devices-tip {
+				.delay(200ms);
+				bottom: 60px;
+				left: 100%;
+				margin-left: 10px;
+				width: 577px;
+				height: 74px;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: -2655px -364px;
+				z-index: 1;
+			}
+
+			&.coin {
+				top: 0;
+				left: 50%;
+				margin: -51px 0 0 -50px;
+				width: 100px;
+				height: 102px;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: -3180px -153px;
+				z-index: 1;
+			}
+
+//			Umblerito do rodapé
+			&.umblerito_footer {
+				top: 0;
+				left: 50%;
+				margin: -250px 0 0 -238px;
+				width: 476px;
+				height: 290px;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: -3232px -254px;
+				z-index: -1;
+			}
+//			nariz do umblerito
+			&.umblerito_nose {
+				top: 0;
+				left: 50%;
+				margin: -137px 0 0 -57px;
+				width: 114px;
+				height: 160px;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: -3118px -438px;
+				z-index: 1;
+			}
+		}
+
+
+//		***
+//		Animacoes com Scroll
+//		Define os estados iniciais de cada objeto
+		.pre-animation {
+			.floor {
+				opacity: 0;
+				bottom: -100% !important;
+			}
+			.scribble {
+				opacity: 0;
+			}
+			.ze_advogado,
+			.dr_jose,
+			.tablet {
+				opacity: 0;
+				right: -100%;
+			}
+			.notebook,
+			.cellphone,
+			.devices-tip {
+				opacity: 0;
+				right: 100%;
+			}
+			.devices-tip {
+				opacity: 0;
+				left: -1000%;
+			}
+			.tablet {
+				opacity: 0;
+				left: 100%;
+			}
+			.dr_jose_relax {
+				.dr_jose { opacity: 0; left: -100%; }
+				.send-to-group { opacity: 0; top: -100%; }
+				.user { opacity: 0; top: 100%; }
+			}
+			.umblerito_defense { 
+				opacity: 0; right: -100%;
+				.speech { opacity: 0; top: -100%; }
+			}
+			.umblerito_footer,
+			.umblerito_nose { top: -35px; }
+
+		}
+
+
+//		***
+//		Menu mobile
+		.mobile-menu {
+			position: fixed;
+			z-index: 0;
+			top: 0;
+			right: 0px;
+			width: 250px;
+			padding: 25px;
+			height: 100%;
+			background-color: @primary-darker;
+			.ease(300ms, linear);
+			.box-shadow(inset 5px 0 10px rgba(0,0,0,0.25));
+
+			.btn { margin: 0px 0 25px 0; }
+
+			ul {
+				color:@umblerito;
+				display: block;
+				list-style: none;
+				padding: 10px;
+				margin-top: -15px;
+				text-align: left;
+				font-weight: 400;
+				font-size: 16px;
+			}
+			li a { 
+				color: inherit; 
+				padding:5px 0; 
+				display: block;
+
+				&:hover, &:focus { color: @important-light; }
+			}
+		}
+
+//		***
+//		agrupador do conteudo
+		.content-wraper { 
+			z-index: 1;
+			padding-top: 70px;
+			width: 100%;
+			display: block;
+			position: relative;
+			.ease(300ms, cubic-bezier(0,0,3,1));
+			background-color: #FFF;
+			&.mobile-menu-open { 
+				.transform(translate(-250px, 0));
+				overflow: hidden;
+				position: fixed;
+
+				.show-menu { 
+					.fa-bars { display: none; }
+					.fa-times { display: inline; }
+				}
+			}
+		}
+
+//		***
+//		Barra de navegacao
+		.navbar {
+			background-color: #FFF; 
+			padding: 5px 0;
+			border-bottom: none;
+			.box-shadow( 0 0 8px fade(@gray, 20%) );
+
+			.navbar-brand{ 
+				margin:10px;
+				width: 112px;
+				height: 36px;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: -3529px -68px;
+			}
+
+			.navbar-nav>.active>a, 
+			.navbar-nav>.active>a:focus, 
+			.navbar-nav>.active>a:hover {
+			    color: inherit;
+			    background-color: inherit; 
+			}
+
+			.navbar-nav>li>a {
+				line-height: 40px;
+				margin: 10px;
+				padding: 0 10px;
+				color:@text-color;
+				&:hover,
+				&:focus {
+					color:@primary;
+				}
+				
+			}
+			.show-menu {
+				float: right;
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				margin: 10px 0;
+				cursor: pointer;
+				font-size: 23px;
+
+				.fa-times { display: none; }
+			}
+		}
+		.section02 .navbar {
+			.navbar-nav>.active>a, 
+			.navbar-nav>.active>a:focus, 
+			.navbar-nav>.active>a:hover {
+			    color: @section02;
+			    font-weight: 900; 
+			}
+		}
+
+
+//		***
+//		Submenu
+		.submenu {
+			border-bottom: solid 1px @primary-lighter;
+
+			ul{
+				margin: 0 0px;
+				padding: 0;
+				float:left;
+				width: 100%;
+				display: block;
+				position: relative;
+			}
+
+			li {
+				list-style: none;
+				float:left;
+				display: block;
+				width: 33.3333%;
+				padding: 0;
+				position: relative;
+
+				a {
+					color: @gray-light;
+					padding: 25px 15px 25px 65px;
+					float:left;
+					display: block;
+					width: 100%;
+					&:hover, &:focus { color: @gray-light; }
+				}
+
+				h4 	{ margin: 0 0 5px 0; font-weight: 900; } 
+				p 	{ margin: 0; font-size: 14px; line-height: 14px * @ratio;  }
+
+				&::before{
+					content: "";
+					display: block;
+					width: 50px;
+					height: 50px;
+					position: absolute;
+					top:25px;
+					left:0;
+					margin: 0 0 0 0px;
+					background-image: url("../imgs/sprite-ilustracoes.png");
+				}
+
+				&.sites::before 			{ background-position: -3517px -128px; }
+				&.emails::before 			{ background-position: -3467px -128px; }
+				&.dominios::before 			{ background-position: -3567px -128px; }
+
+				&.sites.active::before 		{ background-position: -3517px -178px; }
+				&.emails.active::before 	{ background-position: -3467px -178px; }
+				&.dominios.active::before 	{ background-position: -3567px -178px; }
+
+				&:hover, &:active {
+					&.sites::before 		{ background-position: -3517px -178px; }
+					&.emails::before 		{ background-position: -3467px -178px; }
+					&.dominios::before 		{ background-position: -3567px -178px; }
+				}
+
+				&::after {
+					content: "";
+					width: 100%;
+					height: 4px;
+					bottom: 0px;
+					left: 0;
+					position: absolute;
+					background-color: @primary-lighter;
+				}
+
+				&.emails.active	{ 
+					h4 { color: @section02; }
+					&::after { background-color: @section02; }
+				}
+			}
+		}
+
+//		***
+//		Conteudo do site
+		main {
+			overflow-x: hidden; 
+			.header.main {
+				padding: 80px 0 100px 0;
+				.container{ position: relative; }
+				.featured-text{ 
+					margin-bottom: 100px;
+					h1 { margin-left: -7px; margin-bottom: 20px }
+				}
+				.call-to-action { 
+					display: block; 
+					margin: 0 -10px 0 -10px;
+
+					p { margin: 10px 0 0 10px; }
+				}
+			}
+
+//			voltar ao topo / botão do chat
+			.back-to-top,
+			.chat-btn {
+				position: fixed;
+				right: 10px;
+				bottom: 10px;
+				display: block;
+				cursor: pointer;
+			}
+			.back-to-top {
+				width: 42px;
+				height: 66px;
+				margin: 0 10px 76px 10px;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: -3467px 0px;
+				z-index: 100;
+			}
+			.chat-btn {
+				width: 62px;
+				height: 62px;
+				margin: 0;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: -3467px -66px;
+				z-index: 101;
+			}
+			
+//			definicoes gerais das sections
+			.section {
+				padding: 60px 0 100px 0;
+				position: relative;
+
+				.title {
+					h2 + h3	{ margin-top: -30px; }
+				}
+			}
+
+						
+//			grupos de imagens
+			.img-group{
+
+				&.devices{
+					height: 423px;
+					margin-top: -25px;
+				}
+				&.features{
+					-webkit-transform-origin:0 0; /* Chrome, Safari, Opera */
+    				transform-origin: 0 0;
+					position: relative;
+					width: 100%;
+					min-width: 970px;
+					height: 630px;
+					margin-bottom: -40px;
+					.floor {
+						bottom: 0;
+						right: 50%;
+						margin: 0 -701px 0 0;
+					}
+
+				}
+			}
+
+//			lista de beneficios
+			.benefits-list {
+				display: block;
+				list-style: none;
+				padding: 0;
+				margin: 15px 0 0 0;
+				float: left;
+				clear: both;
+				width: 100%;
+				h4	{ margin-bottom: 20px; }
+				.fa { 
+					float:right; 
+					color: @section02; 
+					font-size: 200%;
+    				line-height: inherit;
+				}
+			}
+
+//			Tabela de comparacao
+			.table.compare {
+				overflow: hidden;
+				th, td {
+					text-align: center;
+					vertical-align: bottom;
+					font-weight: 400;
+					padding: 15px 10px;
+					line-height: inherit;
+					border: none !important;
+				}
+				th:first-of-type {
+					width: 30%;
+					text-align: right;
+				}
+				thead th:first-of-type {
+					position: relative; 
+					&::after{
+						bottom: 0;
+						left: 0;
+						content: "";
+						width: 1000%;
+						height: 6px;
+						position: absolute;
+						background-image: url("../imgs/sprite-ilustracoes.png");
+						background-position: 0 -598px;
+						background-repeat: repeat-x;
+					}
+				}
+				tbody th {
+					position: relative; 
+					&::after{
+						bottom: -3px;
+						left: 0;
+						content: "";
+						width: 1000%;
+						height: 6px;
+						position: absolute;
+						background-image: url("../imgs/sprite-ilustracoes.png");
+						background-position: 0 -606px;
+						background-repeat: repeat-x;
+					}
+				}
+				tbody tr:last-of-type th::after { content: none; }
+				
+				thead th {
+					font-weight: 900;
+					font-size: 40px;
+					line-height: 100%;
+					color: @section02;
+				}
+				tbody tr:first-of-type{
+					td 		{ font-weight: 900; }
+					span 	{ font-size: 30px; }
+				}
+				.fa-check { color: @success; }
+				.fa-times { color: @gray-light; }
+			}
+
+//			secao experimente gratis
+			.section.try-it-free {
+				background-color: @gray-lighter;
+				position: relative; 
+				&::before, &::after{
+					content: "";
+					left: 0;
+					width: 100%;
+					height: 12px;
+					position: absolute;
+					background-image: url("../imgs/sprite-ilustracoes.png");
+					background-position: 0 -610px;
+					background-repeat: repeat-x;
+				}
+				&::before { top: -6px; }
+				&::after { bottom: -6px; }
+				.title { margin-top: 40px; }
+				.call-to-action { 
+					text-align: center;
+					.btn { width: 33.3333%; margin: 50px 0 20px 0; }
+				}
+			}
+
+//			Listas (tweets e produtos)
+			.product-list, 
+			.tweets-carousel {
+				width: 100%;
+				float:left;
+				display: block;
+				list-style: none;
+				margin: 0 ;
+				li { 
+					display: block;
+					float:left;
+					padding: 10px;
+				}
+			}
+			.product-list {
+				padding: 0;
+
+				li {
+					width: 33.3333%;
+				}
+
+				.group {
+					padding: 20px 30px;
+					text-align: center;
+					background-color: #FFF;
+					overflow: hidden;	
+					.border-radius(4px);
+					.box-shadow(0 2px 0 @primary-lighter);
+				}
+				h5 { 
+					font-weight: 400;
+					font-size: 24px;
+					color: #FFF;
+					background-color: @gray-light;
+					margin: -20px -30px 0 -30px;
+					padding: 15px 10px 13px 10px;
+				}
+				.price {
+					margin-bottom: 20px;
+					strong {
+						display: block; 
+						font-size: 50px;
+						line-height: 50px;
+						padding: 40px 0 10px 0;
+						span { font-size: 80px; line-height: inherit; }
+					}
+				}
+				a { color: @section02; }
+			}
+
+			.tweets-carousel {
+				padding: 0;
+				width: 100%;
+				position: relative;
+				left: 0;
+				li.group { 
+					width: 100%;
+					position: relative;
+					.ease(300ms, cubic-bezier(0,0,.25,1));
+					.transform(translate3d(0, 0, 0));
+					padding: 0 10px;
+				}
+				.tweet {
+					width: 25%;
+					display: block;
+					float: left;
+					padding: 5px;
+
+					iframe { margin: 0 !important; }
+				}
+			}
+
+			.section.tweets .title .fa-heart { font-size: 80%; }
+
+		}
+
+
+//		*** 
+//		rodapé
+		footer {
+			background-color: @umblerito;
+			position: relative; 
+			margin-top: 200px;
+			padding: 60px 0 0 0;
+			text-align: center;
+
+			&::before{
+				content: "";
+				top: -6px;
+				left: 0;
+				width: 100%;
+				height: 12px;
+				position: absolute;
+				background-image: url("../imgs/sprite-ilustracoes.png");
+				background-position: 0 -634px;
+			}
+
+			dl{
+				display: inline-block;
+				padding: 0 30px 0 30px;
+
+				dt {
+					font-size: 30px;
+					font-weight: 900;
+					color: @gray-lighter;
+					margin: 37px 0 5px 0;
+					line-height: 100%;
+				}
+				dd { 
+					display: block; 
+					float: left; 
+					clear:both;
+					text-align: left;
+					a {
+						float:left;
+						font-size: 16px;
+						font-weight: 400;
+						color: @primary-dark;
+						margin-top: 10px;
+						&:hover, &:focus { color: @primary; }
+					}
+
+					.fa { width: 40px; }
+				}
+			}
+			.institutional {
+				display: block;
+				text-align: center;
+				font-size: inherit;
+				height: auto;
+				padding: 15px 10px 25px 10px;
+				line-height: 30px;
+				margin-top: 40px;
+				color: @gray-light;
+				font-weight: 700;
+				background-color: @gray-dark;
+				position: relative;
+
+				&::before{
+					content: "";
+					top: -6px;
+					left: 0;
+					width: 100%;
+					height: 12px;
+					position: absolute;
+					background-image: url("../imgs/sprite-ilustracoes.png");
+					background-position: 0 -646px;
+				}
+
+				.logo-footer{
+					font-size: 0;
+					display: inline-block;
+					width: 79px;
+					height: 23px;
+					position: relative;
+					top: -5px; 
+					margin-right: 10px;
+					background-image: url("../imgs/sprite-ilustracoes.png");
+					background-position: -3509px 0;
+				}
+				small { font-size: 14px; }
+
+				.institutional-links {
+					width: 100%;
+					display: block;
+					list-style: none;
+					padding: 0;
+					margin: 0 0 5px 0;
+					
+					li{
+						color: @gray;
+						display: inline-block;
+						&::after { 
+							content:"\007C";
+							padding: 0 5px;
+						}
+						&:last-of-type::after { content: none; }
+
+						a { 
+							margin: 0;
+							color: inherit;
+							&:hover, &:focus { color: @primary; }
+						}
+					}
+				}
+			}
+		}
+
+
+//		***
+//		Media queries
+
+//		até 991px de largura
+		@media (max-width: 991px) {
+
+			h1, h2, h3, h4, h5, h6,
+			.header.main .call-to-action { text-align: center; }
+
+			.img-group.ze_and_drjose{
+				height: 300px;
+			    width: 550px;
+			    left: 50%;
+			    margin-left: -275px;
+			    margin-bottom: 100px;
+			    position: relative;
+			}
+			.section.active-sync { 
+				.img-group.devices { 
+					margin-bottom: 45px;
+					.devices-tip { display: none; }
+					}
+			}
+			.img-group.features {
+				.scale(0.78);
+			}
+
+			main {
+
+				.back-to-top { display: none; }
+
+				.section { padding: 60px 0 60px 0; }
+				.section.try-it-free {
+					.call-to-action .btn, .product-list li { width: 100%; }
+				}
+			}
+
+		}
+
+//		entre 768px e 991px de largura
+		@media (max-width: 991px) and (min-width: 768px) {
+			
+			.submenu{
+				li {
+					&::before { top:4px; }
+					a { 
+						padding: 0px 15px 0px 65px; 
+						line-height: 50px; 
+						height: 60px; 
+					}
+					h4 { line-height: 60px; text-align: left; }
+					p { display: none; }
+				}
+			}
+			.section.features {
+				.benefits-list { display: none; }
+				.img-group.devices { display: none; }
+			}
+
+			.tweet { 
+				width: 100% !important;
+				max-width: 498px;
+				float: none !important;
+				margin: 0 auto;
+			 }
+		}
+
+
+//		até 767px de largura
+		@media (max-width: 767px) {
+			.submenu{
+				li {
+					&::before { 
+						top:4px;
+						left: 50%;
+						margin-left: -25px;
+					}
+					a { 
+						padding: 0; 
+						line-height: 50px; 
+						height: 60px; 
+					}
+					h4 { display: none; }
+					p { display: none; }
+				}
+			}
+			.img-group.ze_and_drjose{
+				height: 300px;
+			    width: 370px;
+			    margin-left: -185px;
+			    .ze_advogado { display: none; }
+			}
+			.header.main .call-to-action .btn { display: block; }
+
+			.section.features {
+				.benefits-list {
+					h4 { text-align: left; } 
+					.fa { float: left; margin-right: 10px; }
+				}	
+				.img-group.devices, .img-group.features { display: none; }
+			}
+
+			.tweet { width: 100% !important; }
+
+			footer {
+				dl { width: 100%; }
+				dd { 
+					width: 100%;
+					a { width: 100%; text-align: center; }
+				}
+				.institutional small { font-size: 12px; }
+				.institutional-links { font-size: 14px; }
+			}
+			h1 { font-size: 40px; margin:0 0 35px 0; }
+			h2 { font-size: 25px; margin:0 0 35px 0; }
+			h3 { font-size: 23px; margin:0 0 35px 0; }
+			h4 { font-size: 18px; margin:0 0 20px 0; }
+			h5 { font-size: 14px; margin:0 0 15px 0; }
+			h6 { font-size: 14px; margin:0 0 15px 0; }
+
+			main .section .title h2 + h3 { margin-top: -20px; }
+
+			hgroup { padding: 0 15px; }
+		}
+			
+
+}
